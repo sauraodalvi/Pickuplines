@@ -1,6 +1,6 @@
 // Function to fetch and display a pickup line
 function fetchPickupLine() {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const proxyUrl = 'https://cors.bridged.cc/'; // Updated proxy server URL
     const apiUrl = 'https://vinuxd.vercel.app/api/pickup';
 
     fetch(proxyUrl + apiUrl)
