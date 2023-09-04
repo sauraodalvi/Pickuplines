@@ -16,7 +16,7 @@ function fetchPickupLine() {
             pickupLineDiv.textContent = data.pickup;
         })
         .catch(error => {
-            console.error('Error fetching pickup line:', error);
+            console.error('Error fetching or processing pickup line:', error);
         });
 }
 
