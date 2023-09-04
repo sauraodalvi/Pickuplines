@@ -1,23 +1,28 @@
 // Function to fetch and display a pickup line
 function fetchPickupLine() {
-    const proxyUrl = 'https://cors.bridged.cc/'; // Updated proxy server URL
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const apiUrl = 'https://vinuxd.vercel.app/api/pickup';
 
-    fetch(proxyUrl + apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Update the content of the 'pickup-line' div with the pickup line
-            const pickupLineDiv = document.getElementById('pickup-line');
-            pickupLineDiv.textContent = data.pickup;
-        })
-        .catch(error => {
-            console.error('Error fetching or processing pickup line:', error);
-        });
+    fetch(proxyUrl + apiUrl, {
+        method: 'GET',
+        headers: {
+            'Origin': 'https://sauraodalvi.github.io' // Replace with your website's origin URL
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Update the content of the 'pickup-line' div with the pickup line
+        const pickupLineDiv = document.getElementById('pickup-line');
+        pickupLineDiv.textContent = data.pickup;
+    })
+    .catch(error => {
+        console.error('Error fetching or processing pickup line:', error);
+    });
 }
 
 // Function to copy the pickup line to the clipboard
