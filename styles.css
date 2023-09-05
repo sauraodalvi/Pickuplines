@@ -9,8 +9,7 @@ body, html {
 
 /* Apply responsive styles */
 .container {
-    padding: 20px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -22,6 +21,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 
 .pickup-content {
@@ -76,7 +76,7 @@ footer {
 }
 
 #pickup-line {
-    width: 700px;
+    width: 100%;
     color: white;
     font-size: 16px; /* Reduce font size for mobile */
     font-family: Inter;
