@@ -9,10 +9,11 @@ body, html {
 
 /* Apply responsive styles */
 .container {
-    max-width: 1440px;
-    width: 90%;
-    margin: 0 auto;
     padding: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -23,63 +24,87 @@ main {
     align-items: center;
 }
 
-.pickup-container {
+.pickup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; /* Adjust padding as needed for mobile */
+    background: #FC3B72;
+    box-shadow: 0px 3px 3px 0px rgba(253, 59, 114, 0.25);
+    border-radius: 20px;
     text-align: center;
-    margin-bottom: 20px; /* Add space below .pickup-content */
+    flex-grow: 1; /* Allow the container to expand */
 }
 
 #generate-button {
-    background: #FD3B72;
-    padding: 10px 20px; /* Reduce padding */
+    display: flex;
+    padding: 15px 20px; /* Adjust padding for mobile */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     border-radius: 20px;
+    background: linear-gradient(180deg, #FD3B72 0%, #FD3B72 100%);
+    box-shadow: 0px 3px 3px 0px rgba(253, 59, 114, 0.25);
+    max-width: calc(100% - 5px);
     color: white;
-    font-size: 20px; /* Reduce font size */
+    font-size: 16px; /* Reduce font size for mobile */
     font-family: Inter;
     font-weight: 600;
     word-wrap: break-word;
-    cursor: pointer;
+    text-align: center;
 }
 
 footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 10px 0; /* Adjust padding */
+    padding: 10px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
-/* Add styles for the pickup content */
+/* Updated styles for the pickup content */
 .pickup-content {
+    padding: 100px; /* Adjust padding for mobile */
+    flex-grow: 1;
     background: #FC3B72;
-    padding: 20px; /* Reduce padding */
+    box-shadow: 0px 3px 3px 0px rgba(253, 59, 114, 0.25);
     border-radius: 20px;
-    box-shadow: 0px 3px 3px rgba(253, 59, 114, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    gap: 20px;
+    text-align: center;
 }
 
 #pickup-line {
-    max-width: calc(100% - 40px); /* Adjust the width with horizontal padding */
+    width: 700px;
     color: white;
-    font-size: 20px; /* Reduce font size */
+    font-size: 16px; /* Reduce font size for mobile */
     font-family: Inter;
     font-weight: 600;
     word-wrap: break-word;
-    text-align: center; /* Center-align text */
+    text-align: center;
+    margin-bottom: 20px; /* Adjust margin for mobile */
+    margin-top: 20px; /* Adjust margin for mobile */
+}
+
+/* Updated styles for the button container */
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Adjust gap for mobile */
+    justify-content: center;
 }
 
 #copy-button {
     background: white;
-    padding: 10px 20px; /* Reduce padding */
-    border-radius: 1000px;
+    border-radius: 20px;
     color: black;
-    font-size: 16px; /* Reduce font size */
+    font-size: 16px;
     font-family: Inter;
     font-weight: 600;
     word-wrap: break-word;
+    width: 220px; /* Set a fixed width for the copy button */
+    text-align: center; /* Center-align text */
+    box-sizing: border-box; /* Include padding in the button's width */
 }
+
