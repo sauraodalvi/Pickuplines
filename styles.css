@@ -22,6 +22,8 @@ main {
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+    margin: auto;
+    max-width: 100%;
 }
 
 .pickup-content {
