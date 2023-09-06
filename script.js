@@ -1,7 +1,7 @@
-let currentLineIndex = 0; // Initialize current pickup line index
+let currentLineIndex = -1; // Initialize current pickup line index to -1
 
 function fetchAndDisplayPickupLine() {
-    const apiUrl = 'https://qhumpfwstxjrvmlckokr.supabase.co/rest/v1/PickupLine_db?select=*'; // Fetch 10 pickup lines
+    const apiUrl = 'https://qhumpfwstxjrvmlckokr.supabase.co/rest/v1/PickupLine_db?select=*'; // Fetch all pickup lines
 
     // Add the necessary headers
     const headers = new Headers();
@@ -24,11 +24,19 @@ function fetchAndDisplayPickupLine() {
         .then(data => {
             const pickupLineDiv = document.getElementById('pickup-line');
 
-            if (currentLineIndex < data.length) {
-                pickupLineDiv.textContent = data[currentLineIndex].Pickup_line; // Modify this line to match your Supabase response structure
-                currentLineIndex++;
+            if (data.length > 0) {
+                // Generate a random index within the range of available pickup lines
+                const randomIndex = Math.floor(Math.random() * data.length);
+
+                // Ensure that the same line is not displayed consecutively
+                while (randomIndex === currentLineIndex) {
+                    randomIndex = Math.floor(Math.random() * data.length);
+                }
+
+                pickupLineDiv.textContent = data[randomIndex].Pickup_line; // Modify this line to match your Supabase response structure
+                currentLineIndex = randomIndex;
             } else {
-                pickupLineDiv.textContent = "No more pickup lines available.";
+                pickupLineDiv.textContent = "No pickup lines available.";
             }
 
             const copyButton = document.getElementById('copy-button');
