@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Inter, Arial, sans-serif;
-    background: none;
+    background: #f0f0f0;
     overflow: hidden; /* Hide scrollbars */
 }
 
@@ -23,7 +23,8 @@ main {
     align-items: center;
     padding: 0 20px;
     margin: auto;
-    max-width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
 .pickup-content {
@@ -69,24 +70,28 @@ footer {
 
 /* Updated styles for the pickup content */
 .pickup-content {
-    padding: 100px; /* Adjust padding for mobile */
+/*    padding: 100px; /* Adjust padding for mobile */
     flex-grow: 1;
     background: #FC3B72;
     box-shadow: 0px 3px 3px 0px rgba(253, 59, 114, 0.25);
     border-radius: 20px;
     text-align: center;
+    width: 498px;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #pickup-line {
-    width: 100%;
+    width: 80%;
     color: white;
     font-size: 16px; /* Reduce font size for mobile */
     font-family: Inter;
     font-weight: 600;
     word-wrap: break-word;
     text-align: center;
-    margin-bottom: 20px; /* Adjust margin for mobile */
-    margin-top: 20px; /* Adjust margin for mobile */
+    display: inline-block;
+
 }
 
 /* Updated styles for the button container */
