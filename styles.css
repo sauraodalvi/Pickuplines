@@ -115,3 +115,20 @@ footer {
     box-sizing: border-box; /* Include padding in the button's width */
 }
 
+.fixed-header {
+    margin-top: 26px;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Ensure the header appears above content */
+}
+
+.header-logo {
+    width: 100px; /* Adjust the logo width */
+    height: auto; /* Maintain aspect ratio */
+}
+
