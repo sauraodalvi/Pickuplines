@@ -1,2 +1,1 @@
-Baic webapp using -
-API: https://vinuxd.vercel.app/api/pickup
+A simple web app which fetches disciplines from a db
